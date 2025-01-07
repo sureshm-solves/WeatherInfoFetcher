@@ -1,4 +1,5 @@
 import requests
+import os
 
 def fetch_weather_data(city: str, api_key: str):
     base_url = "http://api.openweathermap.org/data/2.5/weather"
@@ -26,7 +27,7 @@ def parse_weather_data(data):
 
 def get_weather(city: str):
     # openweathermap API KEY
-    api_key = "ecbbc177b887809fa50eab46b6a99952"
+    api_key = os.getenv("API_KEY_OPEN_WEATHER_MAP")
 
     try:
         # Make the API Call
